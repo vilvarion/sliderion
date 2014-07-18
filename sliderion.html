@@ -1,0 +1,24 @@
+<div class="sliderion" id="myCanvas" ng-class="{fullscreen: fullscreen, 'sidebar-opened': sideBar}">
+	<span class="error" ng-hide="slides.result">{{slides.error}} {{src}}</span>
+	<ul class="sidebar">
+		<li ng-repeat="slide in slides.content" ng-class="{active: $index===currentSlide}" ng-click="goToSlide($index)">
+			<img ng-src="{{src}}/{{slide.filename}}">
+			<small>{{slide.label}}</small>
+		</li>
+	</ul>
+	<ul class="all-slides" ng-show="slides.result">
+		<li ng-repeat="slide in slides.content" ng-show="$index === currentSlide">
+			<div class="caption"><i class="fa fa-bars sidebar-icon" ng-click="sidebarToggle()"></i> {{slide.label}} ({{$index+1}}/{{slides.content.length}})
+				<i class="fa fa-expand fullscreen-icon" ng-click="goFullscreen()" ng-show="!fullscreen" title="На весь экран"></i>
+				<i class="fa fa-compress fullscreen-icon" ng-click="exitFullscreen()" ng-show="fullscreen" title="Свернуть"></i>
+			</div>
+			<img ng-src="{{src}}/{{slide.filename}}">
+		</li>
+	</ul>
+	<div class="controls" ng-show="slides.result">
+		<button ng-click="firstSlide()" ng-disabled="(currentSlide === 0)"><i class="fa fa-fast-backward"></i></button>
+		<button ng-click="prevSlide()" ng-disabled="(currentSlide === 0)"><i class="fa fa-chevron-left"></i></button>
+		<button ng-click="nextSlide()" ng-disabled="(currentSlide === (slides.content.length-1))"><i class="fa fa-chevron-right"></i></button>
+		<button ng-click="lastSlide()" ng-disabled="(currentSlide === (slides.content.length-1))"><i class="fa fa-fast-forward"></i></button>
+	</div>
+</div>

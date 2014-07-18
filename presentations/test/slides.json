@@ -1,0 +1,14 @@
+[
+	{
+		"label"		: "Первый слайд",
+		"filename"	: "banner01.jpg"
+	},
+	{
+		"label"		: "Второй слайд",
+		"filename"	: "banner02.jpg"
+	},
+	{
+		"label"		: "Слайд третий",
+		"filename"	: "banner03.jpg"
+	}
+]

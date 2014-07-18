@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Sliderion</title>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.15/angular.min.js"></script>
+	<link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/skeleton.css">
+	<link rel="stylesheet" href="css/layout.css">
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+	 <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
+</head>
+<body ng-app="SilderionApp">
+	
+	<div class="container">
+		<div class="sixteen columns">
+			<h1 class="remove-bottom" style="margin-top: 40px">Sliderion &mdash; система для презентаций</h1>
+			<h5>Разработано как тестовое задания для Яндекса, версия 0.1</h5>
+			<hr />
+		</div>
+		<div class="two-thirds column">
+			<h3>Добро пожаловать!</h3>
+			<p>Для выполнения этого задания я выбрал фреймворк Angular.js. Мой выбор обусловлен тем, что Angular, на мой взгляд, №1 в удобстве написания изменчивых интерфейсов и скорости их разработки.</p>
+
+			<sliderion src="presentations/test"></sliderion>
+
+			<h4>В первой версии «Слайдериона» есть: </h4>
+			<ul class="text-list">
+				<li>&mdash; загрузка файлов из папки, указанной в src директивы</li>
+				<li>&mdash; кнопки переключения между слайдами</li>
+				<li>&mdash; боковая панель быстрого выбора слайда по миниатюре/заголовку</li>
+				<li>&mdash; возможность развернуть презентацию на полный экран</li>
+			</ul>
+
+			<h4>В новой версии ждите: </h4>
+			<ul class="text-list">
+				<li>&mdash; управление переключением слайдов с клавиатуры, горячие клавиши</li>
+				<li>&mdash; автопроигрывание слайдов (тайминг может задаваться в <code>slides.json</code>)</li>
+				<li>&mdash; проигрывание аудио-файлов к слайдам (задается также в <code>slides.json</code>)</li>
+			</ul>
+
+			<h4>Для подключения «Слайдериона» на страницу требуется:</h4>
+			<ul class="text-list">
+				<li>&mdash; подключить Angular.js на страницу, указать <code>ng-app="SilderionApp"</code> у тега <code>&lt;body&gt;</code></li>
+				<li>&mdash; подключить JQuery (в будущих версиях не потребуется)</li>
+				<li>&mdash; разместить на странице директиву <code>&lt;sliderion src="path-to/slides"&gt;&lt;/sliderion&gt;</code>, указав в атрибуте SRC путь до папки со слайдами (обязательно наличие <code>slides.json</code>)</li>
+			</ul>		
+
+			<h4>Известные косяки: </h4>
+			<ul class="text-list">
+				<li>&mdash; в Сафари на OS X не переходит в полноэкранный режим</li>
+				<li>&mdash; в Фаерфокс кнопки переключения слайдов не становятся неактивными (глюк css)</li>
+				<li>&mdash; белый зазор над нижней панелью</li>
+				<li>&mdash; ... и некоторые кроссбраузерные и адаптивные недочеты</li>
+			</ul>
+
+			<br/>	
+			<br/>	
+			<br/>	
+			<br/>	
+		</div>
+		<div class="one-third column">
+			<h3>Использовано:</h3>
+			<ul>
+				<li>&mdash; <a href="http://www.getskeleton.com/" target="_blank">Skeleton CSS framework</a></li>
+				<li>&mdash; <a href="https://angularjs.org/" target="_blank">Angular.js</a></li>
+			</ul>
+			<h3>Автор:</h3>
+			<p>Александр Минаков (Vilvarion)<br/><a href="mailto:vilvarion@gmail.com">vilvarion@gmail.com</a></p>
+			<p><a href="https://github.com/vilvarion/silderion" target="_blank">Код на гитхабе</a></p>
+		</div>
+
+	</div>
+
+</body>
+</html>
