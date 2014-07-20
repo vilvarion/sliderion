@@ -1,0 +1,23 @@
+[
+	{
+		"label"		: "In a hole in the ground..",
+		"filename"	: "hobbit1.jpg",
+		"delay"		: 5000,
+		"audio"		: "hobbit1.ogg",
+		"subtitles"	: "In a hole in the ground there lived a hobbit."
+	},
+	{
+		"label"		: "Not a nasty, dirty..",
+		"filename"	: "hobbit2.jpg",
+		"delay"		: 11000,
+		"audio"		: "hobbit2.ogg",
+		"subtitles"	: "Not a nasty, dirty, wet hole, filled with the ends of worms and an oozy smell, nor yet a dry, bare, sandy hole with nothing in it to sit down on or to eat:"
+	},
+	{
+		"label"		: "it was a hobbit-hole..",
+		"filename"	: "hobbit3.jpg",
+		"delay"		: 6000,
+		"audio"		: "hobbit3.ogg",
+		"subtitles"	: "it was a hobbit-hole, and that means comfort."
+	}
+]

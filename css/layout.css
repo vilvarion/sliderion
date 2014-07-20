@@ -1,10 +1,14 @@
 .sliderion {
 	margin: 20px 0px;
+	margin-top: 10px;
 	min-height: 300px;
 	position: relative;
 	overflow: hidden;
 
 	border: 1px solid #ccc;
+}
+.fa {
+	cursor: pointer;
 }
 .error {
 	padding: 5px;
@@ -36,6 +40,30 @@ ul.all-slides > li > img {
 	width: 100%;
 	background-color: #ddd;
 	text-align: center;
+	position: relative;
+}
+
+.options {
+	position: absolute;
+	left: 20px;
+	top: 8px;
+	font-size: 20px;
+}
+.options .fa {
+	width: 24px;
+	text-align: left;
+}
+.options .fa-volume-up, .options .fa-comment {
+	color: #08c;
+	text-shadow: 1px 1px 1px #fff;
+}
+
+.timing {
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	font-size: 14px;
+	color: #888;
 }
 
 .fullscreen-icon {
@@ -71,6 +99,31 @@ ul.all-slides > li > img {
 	bottom: 0px;
 	left: 0px;
 	right: 0px;
+	z-index: 2010;
+}
+
+.sliderion.fullscreen .subtitles {
+	position: fixed;
+	bottom: 80px;
+	font-size: 28px;
+}
+
+.progress {
+	height: 1px;
+	width: 0%;
+	background-color: #08c;
+	position: relative;
+	top: -1px;		
+}
+
+.sliderion.fullscreen .progress {
+	position: fixed;
+	bottom: 37px;
+	left: 0px;
+	right: 0px;
+	top: auto;
+	z-index: 2020;	
+	height: 2px;
 }
 
 .sidebar-icon {
@@ -123,6 +176,47 @@ ul.all-slides > li > img {
 	margin-left: 100px;
 }
 
+.subtitles {
+	position: absolute;
+	bottom: 20px;
+	left: 0px;
+	right: 0px;
+	text-align: center;
+}
+.subtitles > span {
+	color: #fff;
+	font-weight: bold;
+
+	display: inline;
+	padding: 3px 8px;
+	background-color: rgba(0,0,0,0.6);
+}
+
+.play-overlay {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+	z-index: 300;
+	font-size: 48px;
+	color: #fff;
+	background-color: rgba(0,0,0,0.4);
+}
+.play-overlay > .fa {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: -48px;
+	margin-top: -48px;
+	width: 40px;
+	height: 40px;
+	border: 3px solid #fff;
+	padding: 25px 20px;
+	padding-left: 30px;
+	-webkit-border-radius: 100px;
+	border-radius: 100px;
+}
 
 ul.text-list {
 	
@@ -135,4 +229,9 @@ code {
 	border: 1px solid #ccc;
 	padding: 1px 3px;
 }
-
+h4.special {
+	color: #08c;
+	font-family: helvetica, arial;
+	margin: 0px;
+	font-size: 16px;
+}

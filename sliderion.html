@@ -1,5 +1,7 @@
 <div class="sliderion" id="myCanvas" ng-class="{fullscreen: fullscreen, 'sidebar-opened': sideBar}">
 	<span class="error" ng-hide="slides.result">{{slides.error}} {{src}}</span>
+
+	<div class="play-overlay" ng-show="playIcon" ng-click="playIcon=false;play();"><i class="fa fa-play"></i></div>
 	<ul class="sidebar">
 		<li ng-repeat="slide in slides.content" ng-class="{active: $index===currentSlide}" ng-click="goToSlide($index)">
 			<img ng-src="{{src}}/{{slide.filename}}">
@@ -8,17 +10,37 @@
 	</ul>
 	<ul class="all-slides" ng-show="slides.result">
 		<li ng-repeat="slide in slides.content" ng-show="$index === currentSlide">
-			<div class="caption"><i class="fa fa-bars sidebar-icon" ng-click="sidebarToggle()"></i> {{slide.label}} ({{$index+1}}/{{slides.content.length}})
+			<div class="caption">
+				<i class="fa fa-bars sidebar-icon" ng-click="sidebarToggle()"></i> {{slide.label}} ({{$index+1}}/{{slides.content.length}})
 				<i class="fa fa-expand fullscreen-icon" ng-click="goFullscreen()" ng-show="!fullscreen" title="На весь экран"></i>
 				<i class="fa fa-compress fullscreen-icon" ng-click="exitFullscreen()" ng-show="fullscreen" title="Свернуть"></i>
 			</div>
 			<img ng-src="{{src}}/{{slide.filename}}">
+			<div class="subtitles" ng-show="subtitles && slide.subtitles"><span>{{slide.subtitles}}</span></div>
 		</li>
 	</ul>
+	<div class="progress" ng-style="{'width': progress+'%'}"></div>
 	<div class="controls" ng-show="slides.result">
+
+		<div class="options">
+			<i class="fa fa-volume-up" ng-show="volume && haveAudio()" ng-click="audioOff()"></i>
+			<i class="fa fa-volume-off" ng-hide="volume && haveAudio()" ng-click="audioOn()"></i>
+	
+			<i class="fa fa-comment" ng-show="subtitles && haveSubs()" ng-click="subtitles = false"></i>
+			<i class="fa fa-comment-o" ng-hide="subtitles && haveSubs()" ng-click="subtitles = true"></i>
+		</div>
+
 		<button ng-click="firstSlide()" ng-disabled="(currentSlide === 0)"><i class="fa fa-fast-backward"></i></button>
 		<button ng-click="prevSlide()" ng-disabled="(currentSlide === 0)"><i class="fa fa-chevron-left"></i></button>
+
+		<button ng-click="play()" ng-hide="currentPlay"><i class="fa fa-play"></i></button>
+		<button ng-click="stop()" ng-show="currentPlay"><i class="fa fa-stop"></i></button>		
+
 		<button ng-click="nextSlide()" ng-disabled="(currentSlide === (slides.content.length-1))"><i class="fa fa-chevron-right"></i></button>
 		<button ng-click="lastSlide()" ng-disabled="(currentSlide === (slides.content.length-1))"><i class="fa fa-fast-forward"></i></button>
+
+		<div class="timing">
+			00:00
+		</div>
 	</div>
 </div>

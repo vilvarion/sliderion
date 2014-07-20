@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Sliderion</title>
+	<title>Sliderion &mdash; система для презентаций</title>
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.15/angular.min.js"></script>
 	<link rel="stylesheet" href="css/base.css">
 	<link rel="stylesheet" href="css/skeleton.css">
@@ -16,14 +16,15 @@
 	<div class="container">
 		<div class="sixteen columns">
 			<h1 class="remove-bottom" style="margin-top: 40px">Sliderion &mdash; система для презентаций</h1>
-			<h5>Разработано как тестовое задания для Яндекса, версия 0.1</h5>
+			<h5>Разработано как тестовое задания для Яндекса, версия 0.2</h5>
 			<hr />
 		</div>
 		<div class="two-thirds column">
 			<h3>Добро пожаловать!</h3>
 			<p>Для выполнения этого задания я выбрал фреймворк Angular.js. Мой выбор обусловлен тем, что Angular, на мой взгляд, №1 в удобстве написания изменчивых интерфейсов и скорости их разработки.</p>
 
-			<sliderion src="presentations/test"></sliderion>
+			<h4 class="special">Презентация со звуком, сабтитрами и индивидуальной длительностью кадров:</h4>
+			<sliderion src="presentations/hobbit" playback="showicon"></sliderion>
 
 			<h4>В первой версии «Слайдериона» есть: </h4>
 			<ul class="text-list">
@@ -31,13 +32,15 @@
 				<li>&mdash; кнопки переключения между слайдами</li>
 				<li>&mdash; боковая панель быстрого выбора слайда по миниатюре/заголовку</li>
 				<li>&mdash; возможность развернуть презентацию на полный экран</li>
+				<li>&mdash; автопроигрывание слайдов (тайминг может задаваться в <code>slides.json</code>)</li>
+				<li>&mdash; проигрывание аудио-файлов к слайдам (задается также в <code>slides.json</code>)</li>
+				<li>&mdash; прогресс-бар времени показа слайда</li>
 			</ul>
 
 			<h4>В новой версии ждите: </h4>
 			<ul class="text-list">
 				<li>&mdash; управление переключением слайдов с клавиатуры, горячие клавиши</li>
-				<li>&mdash; автопроигрывание слайдов (тайминг может задаваться в <code>slides.json</code>)</li>
-				<li>&mdash; проигрывание аудио-файлов к слайдам (задается также в <code>slides.json</code>)</li>
+				<li>&mdash; показ пройденного/оставшегося времени</li>
 			</ul>
 
 			<h4>Для подключения «Слайдериона» на страницу требуется:</h4>
@@ -47,11 +50,12 @@
 				<li>&mdash; разместить на странице директиву <code>&lt;sliderion src="path-to/slides"&gt;&lt;/sliderion&gt;</code>, указав в атрибуте SRC путь до папки со слайдами (обязательно наличие <code>slides.json</code>)</li>
 			</ul>		
 
+			<h4 class="special">Только со слайдами и их заголовками:</h4>
+			<sliderion src="presentations/test" playback="manual"></sliderion>
+
 			<h4>Известные косяки: </h4>
 			<ul class="text-list">
 				<li>&mdash; в Сафари на OS X не переходит в полноэкранный режим</li>
-				<li>&mdash; в Фаерфокс кнопки переключения слайдов не становятся неактивными (глюк css)</li>
-				<li>&mdash; белый зазор над нижней панелью</li>
 				<li>&mdash; ... и некоторые кроссбраузерные и адаптивные недочеты</li>
 			</ul>
 
